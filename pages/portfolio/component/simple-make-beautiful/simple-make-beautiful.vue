@@ -3,9 +3,6 @@
     class="custom-container lg:grid lg:grid-cols-12 pb-[40px] overflow-hidden"
   >
     <div class="lg:col-start-2 lg:col-end-12 grid grid-cols-12 my-20">
-      <!-- <el-divider
-        class="col-start-2 col-span-10 lg:order-last lg:col-start-1 lg:col-span-5 bg-gray-300 h-0.5 my-10 lg:block"
-      ></el-divider> -->
       <div
         class="title col-start-2 col-span-10 lg:col-start-1 lg:col-span-5 lg:text-6xl text-3xl text-darkLavender lg:text-left font-bold grid my-5 font-primary"
       >

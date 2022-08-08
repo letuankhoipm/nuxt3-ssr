@@ -1,12 +1,9 @@
 <template>
   <div class="overflow-hidden lg:mt-40 mt-12 mb-32">
-    <Carousel
-      v-if="images.length"
-      :responsive="responsive"
-      slide-auto
-      :autoplay="true"
-    >
-      <swiper-slide class="gallery80" v-for="item in images" :key="item.id">
+    <!-- slide-auto
+      :autoplay="true" -->
+    <Carousel v-if="images.length" :responsive="responsive" :autoplay="true">
+      <swiper-slide class="" v-for="item in images" :key="item.id">
         <div class="h-[80vh] w-full rounded-md overflow-hidden">
           <img
             class="h-full w-full object-cover"
@@ -41,24 +38,28 @@ export default {
     return {
       items: [1, 2, 3, 4, 5, 6],
       responsive: {
+        350: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
         640: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         1280: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         1536: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 50,
         },
       },

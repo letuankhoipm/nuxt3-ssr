@@ -4,9 +4,9 @@
       class="lg:col-start-2 lg:col-end-12 client-statistics my-10 grid grid-cols-1 md:grid-cols-3 py-10 xl:grid-cols-3 xl:gap-4"
       v-if="statistics.length"
     >
-      <el-divider
+      <span
         class="divider block sm:hidden md:col-start-4 bg-gray-300 md:h-0.5 h-0.4 mb-5"
-      />
+      ></span>
       <div
         class="grid w-full mb-8 md:mb-0 md:px-4 lg:px-8 xl:px-2 xl:col-start-1 xl:col-span-1"
       >

@@ -9,7 +9,7 @@
       </div>
       <div class="developer__content lg:mt-16 lg:flex lg:flex-row">
         <div class="developer__left sm:mt-16 lg:mt-0 lg:w-[60%]">
-          <Carousel :responsive="responsive" slide-auto :showDots="true">
+          <Carousel :responsive="responsive" slide-auto>
             <swiper-slide v-for="item in employees" :key="item.id">
               <DeveloperCard
                 :fullName="item.fullname"
