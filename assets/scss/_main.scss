@@ -1,0 +1,25 @@
+/*
+* @Description: Main Scss Settings
+* @Author: khoi.lt
+* @LastEditors: khoi.lt
+*/
+// font
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap");
+
+@import "./button";
+@import "./form";
+@import "./input";
+@import "./utils";
+@import "./variables";
+@import "./font";
+@import "./container";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  font-family: "Nunito", sans-serif;
+}

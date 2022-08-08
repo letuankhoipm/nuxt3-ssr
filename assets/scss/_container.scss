@@ -1,0 +1,14 @@
+@import "./mixins";
+
+.custom-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @include md-width {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  @include lg-width {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

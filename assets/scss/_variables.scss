@@ -1,0 +1,55 @@
+/*
+* @Description: Variables Settings
+* @Author: khoi.lt
+* @LastEditors: khoi.lt
+*/
+
+$primary: #753691;
+$primaryDark: #6a1b9a;
+$secondary: #5eab47;
+$success: #86cc60;
+$warning: #e6a23c;
+$danger: #ce3c3c;
+$error: #ce3c3c;
+$info: #7accc9;
+$gray: #757575;
+$white: #fff;
+$black: #000;
+$purple: #b673c8;
+$cultured: #dfdfdf;
+$eerieBlack: #1f1f1f;
+$darkLavender: #753691;
+$darkSilver: #707070;
+$red: #ff0000;
+$flashWhite: #f2f2f2;
+
+$font-size-base: 1rem;
+$font-size-xs: $font-size-base * 0.75;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.125;
+$font-size-xl: $font-size-base * 1.25;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+
+// Ex: #ffffff -> "255 255 255"
+@function hexToRGBString($hexColor) {
+  @return "#{red($hexColor)} #{green($hexColor)} #{blue($hexColor)}";
+}
+
+:root {
+  --color-primary-rgb: #{hexToRGBString($primary)}; // using with tailwind
+  --color-primary-dark-rgb: #{hexToRGBString($primary)}; // using with tailwind
+  --color-cultured-rgb: #{hexToRGBString($cultured)}; // using with tailwind
+  --color-eerie-black-rgb: #{hexToRGBString($eerieBlack)}; // using with tailwind
+  --color-dark-lavender-rgb: #{hexToRGBString($darkLavender)}; // using with tailwind
+  --color-dark-silver-rgb: #{hexToRGBString($darkSilver)}; // using with tailwind
+  --color-flash-white-rgb: #{hexToRGBString($flashWhite)}; // using with tailwind
+  --color-red-rgb: #{hexToRGBString($red)}; // using with tailwind
+  --el-color-primary: #{$primary} !important; // color normal
+  --el-color-secondary: #{$secondary} !important;
+  --el-color-purple: #{$purple} !important;
+}

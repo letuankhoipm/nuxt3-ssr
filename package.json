@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "ssr": "yarn build && yarn start"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.5",
+    "axios": "^0.21.4",
+    "swiper": "8.0.2"
+  },
+  "devDependencies": {
+    "@intlify/nuxt3": "^0.2.3",
+    "@nuxtjs/tailwindcss": "^5.3.1",
+    "nuxt": "3.0.0-rc.6",
+    "sass": "^1.54.0"
+  }
+}
