@@ -1,7 +1,7 @@
 import employeeServ from "./employee.service";
 import majorServ from "./major.service";
 class AboutService {
-  public getEmployess() {
+  public getEmployees() {
     return employeeServ.getEmployees();
   }
   public getMajor() {
