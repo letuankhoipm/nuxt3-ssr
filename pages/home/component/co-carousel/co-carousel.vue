@@ -4,7 +4,7 @@
       <swiper-slide v-for="(item, index) in cooperator" :key="`item-${index}`">
         <div
           class="w-full h-[80px] flex items-center justify-center select-none"
-          @click="openDialog(item)"
+          @click="toggleModal(item)"
         >
           <img
             class="w-[100px] cursor-pointer"
@@ -15,42 +15,65 @@
       </swiper-slide>
     </Carousel>
   </div>
-  <!-- Dialog -->
-  <!-- <el-dialog
-    v-model="centerDialogVisible"
-    custom-class="md:w-[50%] w-[90%] rounded-md"
-    :destroy-on-close="true"
-    append-to-body
-  >
-    <template #header>
-      <h1 class="text-xl font-bold uppercase">Business Partner</h1>
-      <hr class="mt-4" />
-    </template>
-    <template #footer>
-      <div v-if="selectedItem" class="flex justify-end">
-        <a :href="selectedItem.link" target="_blank">
+  <Teleport to="body">
+    <div
+      v-if="showModal"
+      class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+      @click="closeModal"
+    >
+      <div class="relative w-auto my-6 mx-auto max-w-6xl">
+        <!--content-->
+        <div
+          class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+          @click.stop
+        >
+          <!--header-->
           <div
-            class="font-bold uppercase flex cursor-pointer hover:text-primary text-xs items-center"
+            class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
           >
-            Go to company page
-            <ArrowNarrowRightIcon class="h-6 w-6 ml-5 text-primary" />
+            <h3 class="text-3xl font-semibold">Business Partner</h3>
+            <button
+              class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+              v-on:click="closeModal"
+            >
+              <span
+                class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
+              >
+                ×
+              </span>
+            </button>
           </div>
-        </a>
+          <!--body-->
+          <div class="relative p-6 flex-auto">
+            <img class="w-[200px]" :src="urlImg" alt="co logo" />
+            <h1 class="font-bold text-xl my-5">Tenlot Group</h1>
+            <p class="my-4 text-slate-500 text-lg leading-relaxed">
+              TENLOT is a lottery and gaming license holder and operator, active
+              in numerous countries globally through local subsidiaries on
+              behalf of national governments and in close cooperation with
+              respectable charitable organizations. The company provides
+              turn-key solutions based on advanced gaming systems, solid lottery
+              and gaming know-how, project implementation experience and
+              extensive operational services.
+            </p>
+          </div>
+          <!--footer-->
+          <div
+            class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+          >
+            <a href="https://www.google.com/" target="_blank">
+              <div
+                class="font-bold uppercase flex cursor-pointer hover:text-primary text-xs items-center"
+              >
+                Go to company page
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-    </template>
-    <div v-if="selectedItem">
-      <img class="w-[200px]" :src="selectedItem.img" alt="co logo" />
-      <h1 class="font-bold text-xl my-5">Tenlot Group</h1>
-      <p class="text-base font-light">
-        TENLOT is a lottery and gaming license holder and operator, active in
-        numerous countries globally through local subsidiaries on behalf of
-        national governments and in close cooperation with respectable
-        charitable organizations. The company provides turn-key solutions based
-        on advanced gaming systems, solid lottery and gaming know-how, project
-        implementation experience and extensive operational services.
-      </p>
     </div>
-  </el-dialog> -->
+    <div v-if="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+  </Teleport>
 </template>
 <script>
 import Carousel from "@/components/carousel/carousel.vue";
@@ -113,6 +136,8 @@ export default {
         },
       ],
       cooperator: [],
+      showModal: false,
+      urlImg: "",
     };
   },
   methods: {
@@ -124,6 +149,13 @@ export default {
       homeService.getCooperator().then((res) => {
         this.cooperator = res.data;
       });
+    },
+    toggleModal(item) {
+      // this.urlImg = item.img.url;
+      this.showModal = !this.showModal;
+    },
+    closeModal() {
+      this.showModal = !this.showModal;
     },
   },
   created() {

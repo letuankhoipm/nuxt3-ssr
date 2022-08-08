@@ -21,7 +21,7 @@
           >
             <span
               class="btn-live-us text-white flex items-center uppercase px-7 cursor-pointer hover:opacity-80 font-britannic"
-              @click="openLiveUsDialog"
+              @click="toggleModal"
             >
               <!-- <PlayIcon class="h-6 w-6 mr-2" /> -->
               {{ $t("home.buttons.btn1") }}</span
@@ -45,33 +45,74 @@
       class="w-screen absolute bottom-0 left-0 wave wave-2 transform scale-150 opacity-30 z-[3]"
     ></div>
   </div>
-
-  <!-- Live us dialog -->
-  <!-- <el-dialog
-    v-model="centerDialogVisible"
-    custom-class="md:w-[70%] w-[90%] rounded-md"
-    :destroy-on-close="true"
-    append-to-body
-  >
-    <template #header>
-      <h1 class="text-2xl font-bold">
-        Hear me! And rejoices to making lots of awesome software.
-      </h1>
-      <p>QKIT Software, Inc</p>
-    </template>
-
-    <iframe
-      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F101932425695680%2Fvideos%2F540235557258769%2F&show_text=false&width=560&t=0"
-      width="100%"
-      height="800px"
-      style="border: none; overflow: hidden"
-      scrolling="no"
-      frameborder="0"
-      allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-    ></iframe>
-  </el-dialog> -->
-  <!-- End live us dialog -->
+  <!-- start modal -->
+  <div>
+    <Teleport to="body">
+      <div
+        v-if="showModal"
+        class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex h-[100vh]"
+        @click="closeModal"
+      >
+        <div class="relative w-auto my-6 mx-auto max-w-6xl">
+          <!--content-->
+          <div
+            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+            @click.stop
+          >
+            <!--header-->
+            <div
+              class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+            >
+              <h3 class="text-3xl font-semibold">
+                Hear me! And rejoices to making lots of awesome software.
+              </h3>
+              <button
+                class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                v-on:click="toggleModal()"
+              >
+                <span
+                  class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
+                >
+                  x
+                </span>
+              </button>
+            </div>
+            <!--body-->
+            <div class="relative p-6 flex-auto">
+              <p class="mb-4">QKIT Software, Inc</p>
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F101932425695680%2Fvideos%2F540235557258769%2F&show_text=false&width=560&t=0"
+                width="100%"
+                height="500px"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+            <!--footer-->
+            <div
+              class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+            >
+              <button
+                class="text-red-500 bg-transparent border border-solid border-black-500 hover:bg-black-500 hover:text-white active:bg-black-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button"
+                v-on:click="toggleModal()"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        v-if="showModal"
+        class="opacity-25 fixed inset-0 z-40 bg-black"
+      ></div>
+    </Teleport>
+  </div>
+  <!-- end modal -->
 </template>
 
 <script>
@@ -80,13 +121,16 @@ export default {
   name: "HomeBanner",
   data() {
     return {
-      centerDialogVisible: false,
       bannerVideoUrl: "https://www.youtube.com/embed/KxZAdEGpYAw",
+      showModal: false,
     };
   },
   methods: {
-    openLiveUsDialog() {
-      this.centerDialogVisible = true;
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+    closeModal() {
+      this.showModal = false;
     },
   },
 };

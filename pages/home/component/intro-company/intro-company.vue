@@ -326,7 +326,7 @@
           <div
             v-for="item in technologies"
             class="flex justify-center"
-            @click="openDialog(item)"
+            @click="toggleModal(item)"
           >
             <img
               class="w-24 h-24 md:pb-8 lg:pb-0"
@@ -335,46 +335,76 @@
             />
           </div>
         </div>
-        <el-dialog
-          v-model="centerDialogVisible"
-          custom-class="md:w-[50%] w-[90%] rounded-md"
-          :destroy-on-close="true"
-          append-to-body
-        >
-          <template #header>
-            <h1 class="text-xl font-bold uppercase">Technology</h1>
-            <hr class="mt-4" />
-          </template>
-          <template #footer>
-            <div class="flex justify-end">
-              <a href="https://angular.io/docs" target="_blank">
+        <Teleport to="body">
+          <div
+            v-if="showModal"
+            class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+            @click="closeModal"
+          >
+            <div class="relative my-6 mx-auto min-w-[500px]">
+              <!--content-->
+              <div
+                class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                @click.stop
+              >
+                <!--header-->
                 <div
-                  class="font-bold uppercase flex cursor-pointer hover:text-primary text-xs items-center"
+                  class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
                 >
-                  Go to docs page
-                  <!-- <ArrowNarrowRightIcon class="h-6 w-6 ml-5 text-primary" /> -->
+                  <h3 class="text-3xl font-semibold">Technology</h3>
+                  <button
+                    class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    v-on:click="closeModal"
+                  >
+                    <span
+                      class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
+                    >
+                      ×
+                    </span>
+                  </button>
                 </div>
-              </a>
+                <!--body-->
+                <div class="relative p-6 flex-auto">
+                  <div>
+                    <img
+                      class="w-[200px]"
+                      :src="technologyImg"
+                      alt="technology image"
+                    />
+                    <h1 class="font-bold text-xl my-5">{{ technologyName }}</h1>
+                    <p class="text-base font-light">
+                      {{ technologyDesc }}
+                    </p>
+                  </div>
+                </div>
+                <!--footer-->
+                <div
+                  class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+                >
+                  <div class="flex justify-end">
+                    <a href="https://angular.io/docs" target="_blank">
+                      <div
+                        class="font-bold uppercase flex cursor-pointer hover:text-primary text-xs items-center"
+                      >
+                        Go to docs page
+                        <!-- <ArrowNarrowRightIcon class="h-6 w-6 ml-5 text-primary" /> -->
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </template>
-          <div>
-            <img
-              class="w-[200px]"
-              :src="technologyImg"
-              alt="technology image"
-            />
-            <h1 class="font-bold text-xl my-5">{{ technologyName }}</h1>
-            <p class="text-base font-light">
-              {{ technologyDesc }}
-            </p>
           </div>
-        </el-dialog>
+          <div
+            v-if="showModal"
+            class="opacity-25 fixed inset-0 z-40 bg-black"
+          ></div>
+        </Teleport>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { defineComponent } from "@vue/runtime-core";
 import homeService from "@/services/home/home.service";
 // import HomeService from "@/modules/landing-page/services/home/home.service";
 
@@ -396,26 +426,14 @@ export default {
       technologyImg: "",
       companySolutions: [],
       timing: 0,
+      showModal: false,
     };
   },
   created() {
     this.getTechnologies();
     this.getCompanySolutions();
   },
-  computed: {
-    // title1() {
-    //   return this.$t("home.title.title1");
-    // },
-    // title2() {
-    //   return this.$t("home.title.title2");
-    // },
-    // title3() {
-    //   return this.$t("home.title.title3");
-    // },
-    // title4() {
-    //   return this.$t("home.title.title4");
-    // },
-  },
+  computed: {},
   methods: {
     openDialog(item) {
       this.centerDialogVisible = true;
@@ -471,6 +489,16 @@ export default {
       const res = await homeService.getCompanySolution();
       this.companySolutions = res.data;
     },
+    toggleModal(item) {
+      if (item) {
+        this.technologyName = item.name;
+        this.technologyImg = item.image.url;
+      }
+      this.showModal = !this.showModal;
+    },
+    closeModal() {
+      this.showModal = !this.showModal;
+    },
   },
 };
 </script>
@@ -504,11 +532,6 @@ export default {
       font-weight: bold;
       color: #757575;
       position: relative;
-      &.active {
-        span {
-          // background: #9c27b0;
-        }
-      }
       span {
         display: none;
         position: absolute;
