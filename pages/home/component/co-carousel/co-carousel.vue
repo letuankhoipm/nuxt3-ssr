@@ -8,7 +8,7 @@
         >
           <img
             class="w-[100px] cursor-pointer"
-            :src="item.image.url"
+            :src="item.image ? item.image.url : ''"
             alt="co logo"
           />
         </div>
@@ -151,7 +151,7 @@ export default {
       });
     },
     toggleModal(item) {
-      // this.urlImg = item.img.url;
+      this.urlImg = item.img ? item.img.url : "";
       this.showModal = !this.showModal;
     },
     closeModal() {
