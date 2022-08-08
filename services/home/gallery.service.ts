@@ -1,12 +1,12 @@
-import { BaseService } from "@/services/base.service"
-import { AxiosResponse } from "axios"
+import { BaseService } from "@/services/base.service";
+import { AxiosResponse } from "axios";
 
 class GalleryService extends BaseService {
-    baseUrl = 'gallery'
+  public baseUrl = "gallery";
 
-    public getGallery(): Promise<AxiosResponse<Gallery[]>> {
-        return this.get()
-    }
+  public getGallery(): Promise<AxiosResponse<Gallery[]>> {
+    return this.get();
+  }
 }
 
-export default new GalleryService()
+export default new GalleryService();

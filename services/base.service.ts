@@ -5,7 +5,7 @@ export class BaseService {
   private _apiUrl = environment.API_URL;
   protected baseUrl;
 
-  constructor(baseUrl: string = "") {
+  constructor(baseUrl = "") {
     this.baseUrl = baseUrl;
   }
 

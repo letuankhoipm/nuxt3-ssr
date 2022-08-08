@@ -29,7 +29,6 @@
 </template>
 
 <script>
-// import { ArrowNarrowRightIcon } from "@heroicons/vue/solid";
 export default {
   name: "DeveloperCard",
   props: ["fullName", "jobs", "desc", "avatar"],

@@ -187,7 +187,6 @@ export default {
       state: null,
     };
   },
-  created() {},
   methods: {
     openMaps() {
       window.open(

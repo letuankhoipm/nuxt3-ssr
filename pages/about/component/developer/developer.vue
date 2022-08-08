@@ -39,7 +39,7 @@ import Carousel from "@/components/carousel/carousel.vue";
 import { SwiperSlide } from "swiper/vue";
 import aboutService from "@/services/about/about.service";
 export default {
-  name: "developer",
+  name: "Developer",
   components: {
     DeveloperCard,
     Carousel,

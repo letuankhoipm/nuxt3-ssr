@@ -2,7 +2,7 @@ import { BaseService } from "@/services/base.service";
 import { AxiosResponse } from "axios";
 
 class MajorService extends BaseService {
-  baseUrl = "major";
+  public baseUrl = "major";
 
   public getMajor(): Promise<AxiosResponse<Major>> {
     return this.get();

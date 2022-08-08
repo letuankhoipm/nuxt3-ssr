@@ -23,10 +23,6 @@
 export default {
   name: "MoreProjectCard",
   props: ["id", "image", "name", "description"],
-  components: {},
-  data() {
-    return {};
-  },
 };
 </script>
 <style lang="scss" scoped>

@@ -35,28 +35,31 @@
             <ul
               class="leading-9 text-lg md:justify-self-start footer-link md:-mr-10"
             >
-              <h4 class="hidden sm:block text-primary mb-2 font-bold">
+              <p class="hidden sm:block text-primary mb-2 font-bold">
                 {{ $t("footer.company.title") }}
-              </h4>
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+              </p>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.company.title") }}
-                </li></a
-              >
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+                </a>
+              </li>
+
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.company.item1") }}
-                </li></a
-              >
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+                </a>
+              </li>
+
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.company.item2") }}
-                </li></a
-              >
-              <li
-                class="hidden sm:block text-black opacity-75 hover:text-primary"
-              >
-                {{ $t("footer.company.item3") }}
+                </a>
+              </li>
+
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
+                  {{ $t("footer.company.item3") }}
+                </a>
               </li>
             </ul>
           </div>
@@ -64,43 +67,43 @@
             class="col-span-1 md:ml-5 lg:ml-0 md:col-start-3 hidden sm:block md:justify-self-start"
           >
             <ul class="leading-9 text-lg footer-link md:-mr-10">
-              <h4 class="hidden sm:block md:block text-primary mb-2 font-bold">
+              <p class="hidden sm:block md:block text-primary mb-2 font-bold">
                 {{ $t("footer.resource.title") }}
-              </h4>
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+              </p>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.resource.item1") }}
-                </li></a
-              >
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+                </a>
+              </li>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.resource.item2") }}
-                </li></a
-              >
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+                </a>
+              </li>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.resource.item3") }}
-                </li></a
-              >
+                </a>
+              </li>
             </ul>
           </div>
           <div
             class="col-span-1 md:ml-10 lg:ml-0 md:col-start-5 footer-legal text-lg md:justify-self-start"
           >
             <ul class="leading-9 footer-link md:-mr-10">
-              <h4 class="hidden sm:block text-primary mb-2 font-bold">
+              <p class="hidden sm:block text-primary mb-2 font-bold">
                 {{ $t("footer.legal.title") }}
-              </h4>
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+              </p>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.legal.item1") }}
-                </li></a
-              >
-              <a href="qkit.vn"
-                ><li class="text-black opacity-75 hover:text-primary">
+                </a>
+              </li>
+              <li class="text-black opacity-75 hover:text-primary">
+                <a href="qkit.vn">
                   {{ $t("footer.legal.item2") }}
-                </li></a
-              >
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -124,6 +127,7 @@
                     d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
                   />
                 </svg>
+                <strong>QKIT Inc, Page</strong>
               </a>
             </div>
             <div class="col-end-4">
@@ -142,6 +146,7 @@
                     d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
                   />
                 </svg>
+                <strong>QKIT Inc, Linkin</strong>
               </a>
             </div>
           </div>

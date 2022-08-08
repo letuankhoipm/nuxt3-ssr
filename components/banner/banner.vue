@@ -2,11 +2,7 @@
   <div class="w-screen h-screen">
     <!-- Hero Banner -->
     <div
-      class="relative bg-no-repeat bg-cover bg-center bg-opacity-80 w-full"
-      :style="{
-        'background-image': `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('${image}')`,
-        height: '80%',
-      }"
+      class="relative g-banner bg-no-repeat bg-cover bg-center bg-opacity-80 w-full"
     >
       <!-- Hero Text -->
       <div
@@ -83,6 +79,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.g-banner {
+  background-image: url("@/assets/bg.png");
+  height: 80%;
+}
 .wave {
   height: 150px;
   background-size: 2000px 150px;

@@ -2,7 +2,7 @@ import { BaseService } from "@/services/base.service";
 import { AxiosResponse } from "axios";
 
 class BlogDetailService extends BaseService {
-  baseUrl = "blogs";
+  public baseUrl = "blogs";
 
   public getBlogDetail(id: string): Promise<AxiosResponse<BlogDetail>> {
     return this.getById(id);

@@ -17,7 +17,7 @@ import Banner from "@/components/banner/banner.vue";
 import BlogService from "@/services/blog/blog.service";
 
 export default {
-  name: "BlogPage",
+  name: "Blog",
   components: {
     BlogsCard,
     Banner,

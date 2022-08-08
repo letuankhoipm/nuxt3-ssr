@@ -13,9 +13,9 @@
           ></div>
         </div>
 
-        <h4 class="text-base text-left font-bold mt-12">
+        <p class="text-base text-left font-bold mt-12">
           {{ $t("home.gallery.content") }}
-        </h4>
+        </p>
       </div>
 
       <div class="lg:w-[65%] overflow-hidden pb-[40px] flex">
@@ -82,15 +82,15 @@ export default {
   data() {
     return {
       responsive: {
-        "640": {
+        640: {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-        "768": {
+        768: {
           slidesPerView: 1,
           spaceBetween: 30,
         },
-        "1280": {
+        1280: {
           slidesPerView: 3,
           spaceBetween: 50,
         },

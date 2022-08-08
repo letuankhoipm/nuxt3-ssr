@@ -25,8 +25,11 @@ export default {
 
   head() {
     return {
+      htmlAttrs: {
+        lang: "en",
+      },
       title: "QKIT Software, Inc | Home",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=5",
       charset: "utf-8",
       meta: [
         {
@@ -38,7 +41,7 @@ export default {
         {
           rel: "icon",
           type: "image/x-icon",
-          href: "/assets/logo/svg/mini_logo.svg",
+          href: "https://res.cloudinary.com/qkit/image/upload/v1659931359/public/images/mini_logo_xcmt16.svg",
         },
       ],
     };

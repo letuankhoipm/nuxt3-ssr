@@ -47,7 +47,6 @@
 import AboutService from "@/services/about/about.service";
 export default {
   name: "CompanyExpert",
-  components: {},
   data() {
     const expertCard = [
       {
@@ -101,7 +100,6 @@ export default {
       major: {},
     };
   },
-  computed: {},
   created() {
     this.getMajor();
   },

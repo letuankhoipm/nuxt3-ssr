@@ -1,5 +1,6 @@
 import BlogInfoServ from "./blogInfo.service";
 import BlogDetailServ from "./blogDetail.service";
+
 class BlogService {
   public getBlogInfo() {
     return BlogInfoServ.getBlogInfo();

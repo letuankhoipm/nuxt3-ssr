@@ -31,7 +31,7 @@
         <h1 class="text-xl font-black truncate xl:max-w-[70%]">
           {{ clientName }}
         </h1>
-        <h4 class="font-light text-sm">{{ position }}</h4>
+        <p class="font-light text-sm">{{ position }}</p>
       </div>
     </div>
   </div>

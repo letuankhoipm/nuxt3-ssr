@@ -1,4 +1,3 @@
-import { BaseService } from "@/services/base.service";
 import statisticServ from "./statistic.service";
 import technologyServ from "./technology.service";
 import companySolutionServ from "./companySolution.service";
@@ -8,9 +7,6 @@ import galleryDetailServ from "./galleryDetail.service";
 import cooperatorServ from "./cooperator.service";
 
 class HomeService {
-  // public getBanners(): Promise<Client> {
-  //   return this.get("banners");
-  // }
   public getTechnologies() {
     return technologyServ.getTechnologies();
   }

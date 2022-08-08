@@ -149,6 +149,7 @@
 <script>
 import BlogService from "@/services/blog/blog.service";
 export default {
+  name: "BlogsCard",
   data() {
     return {
       showBtn: true,

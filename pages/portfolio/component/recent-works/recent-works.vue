@@ -84,7 +84,6 @@ import PortfolioService from "@/services/portfolio/portfolio.service";
 
 export default {
   name: "RecentWorks",
-  components: {},
   data() {
     return {
       projectsInfo: {},

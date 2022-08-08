@@ -21,7 +21,7 @@ import Banner from "@/components/banner/banner.vue";
 import CarouselPlatform from "@/pages/about/component/carousel-platform/carousel-platform.vue";
 
 export default {
-  name: "AboutPage",
+  name: "About",
   components: {
     CompanyExpert,
     CompanySolution,

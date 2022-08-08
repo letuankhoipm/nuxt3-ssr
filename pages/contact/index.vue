@@ -16,6 +16,7 @@ import Banner from "@/components/banner/banner.vue";
 
 export default {
   components: {
+    name: "Contact",
     ContactInfo,
     Banner,
   },
