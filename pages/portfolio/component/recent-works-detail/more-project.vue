@@ -1,12 +1,7 @@
 <template>
   <div class="mb-24 mt-40">
     <hr class="w-[50%] h-[2px] bg-gray-400 mb-24 mx-auto" />
-    <Carousel
-      :showDots="true"
-      :responsive="responsive"
-      :autoplay="true"
-      :pml200="true"
-    >
+    <Carousel :responsive="responsive" :autoplay="true" :pml200="false">
       <swiper-slide
         v-for="item in projects"
         class="ssm:w-[100%]"

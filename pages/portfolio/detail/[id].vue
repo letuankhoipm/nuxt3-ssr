@@ -11,14 +11,14 @@
     />
     <div class="custom-container lg:grid lg:grid-cols-12">
       <div class="lg:col-start-2 lg:col-end-12">
-        <CaruSelPart
+        <CarouselPart
           :images="projectDetail.images"
           :desc="
             projectDetail.projectTranslations[0]
               ? projectDetail.projectTranslations[0].description
               : ''
           "
-        ></CaruSelPart>
+        ></CarouselPart>
         <GalleryPart
           :images="projectDetail.images"
           :desc="
@@ -59,7 +59,7 @@ export default {
       },
     };
   },
-  async created() {
+  created() {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }

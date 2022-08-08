@@ -216,7 +216,7 @@ export default defineComponent({
     }
   }
   .swiper-slide.gallery80 {
-    width: 75% !important;
+    width: 70% !important;
 
     &.swiper-slide-next,
     &.swiper-slide-prev {

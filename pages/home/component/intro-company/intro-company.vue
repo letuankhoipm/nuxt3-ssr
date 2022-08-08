@@ -1,9 +1,9 @@
 <template>
   <div class="custom-container">
     <div class="lg:grid lg:grid-cols-12">
-      <el-divider
+      <span
         class="divider md:col-start-4 lg:col-start-2 lg:col-end-12 md:col-span-6 col-span-12 bg-gray-300 md:h-0.5 h-0.4 mb-16"
-      />
+      ></span>
     </div>
     <div class="intro-company">
       <!-- q -->
@@ -62,9 +62,9 @@
             >
               Q
             </p>
-            <el-divider
+            <span
               class="divider bg-gray-300 md:h-0.5 h-0.4 mb-5 hidden md:block md:mb-3 mt-2"
-            />
+            ></span>
             <p
               class="text-left col-start-1 justify-self-end mr-20 md:mr-0 lg:pt-4 lg:mb-10 md:mb-8 mt-10 lg:-mt-4 xl:-mt-12 text-base lg:text-xl"
             >
@@ -102,9 +102,9 @@
         </div>
       </div>
       <div class="divider-2 grid grid-cols-12">
-        <el-divider
+        <span
           class="divider md:col-start-4 col-start-2 col-end-12 md:col-span-6 col-span-12 bg-gray-300 md:h-0.5 h-0.4 mb-5"
-        />
+        ></span>
       </div>
       <!-- k -->
       <div class="intro-company-card grid md:grid-cols-12 pt-5 pb-10">
@@ -134,9 +134,9 @@
               K
             </p>
             <div class="relative intro-content md:-mt-20">
-              <el-divider
+              <span
                 class="divider bg-gray-300 md:h-0.5 h-0.4 mb-5 hidden md:block md:mb-3 md:ml-7"
-              />
+              ></span>
               <p
                 class="md:pl-7 mr-12 md:mr-0 ssm:mt-0 -mt-10 md:mt-0 text-base lg:text-xl"
               >
@@ -179,9 +179,9 @@
         <div
           class="hidden md:block -mt-20 md:-mt-28 row-span-1 md:grid md:grid-cols-12"
         >
-          <el-divider
+          <span
             class="divider bg-gray-300 md:h-0.5 h-0.4 mb-5 hidden md:block md:mb-3 md:col-start-5 md:col-span-full lg:col-start-5 lg:col-end-12"
-          />
+          ></span>
         </div>
         <div
           class="md:-mt-80 md:grid md:grid-cols-12 pt-5 pb-10 -mt-40"
